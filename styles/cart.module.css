@@ -1,0 +1,33 @@
+.productImage{
+    width: 60px;
+    height: 80px;
+    object-fit: contain;  
+}
+.price{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.delete-btn{
+    margin-top: 10px;
+    height:25px;
+    width:35px
+}   
+.quantityInput{
+    width: 70px;
+    margin-top: 10px;
+    height:30px;
+}   
+.quantityControls button{
+    margin-top: 10px;
+    width:50px;
+    height:30px;
+
+}
+.totalPrice{
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(255, 244, 244);
+    text-align: right;
+    /* border: solid 1px #ccc  ; */
+    /* background-color: #ccc; */
+}

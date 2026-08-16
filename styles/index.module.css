@@ -1,0 +1,20 @@
+.container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.productCard {
+    border: 1px solid #1e1d1d;
+    background-color: rgb(43, 43, 44);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    height:auto;
+    width:200px;
+}
+.productTitle {
+    font-size: 14px;
+    margin: 10px 0;
+}

@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;  
+}
+.navlinks {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+}
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}  
+.navlinks a:hover {
+    color:blue;
+} 
+.brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.logo{ 
+    margin-left: 10px; 
+    margin-top: 10px;
+}
+.cartWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
+
+}
+.cartCount {
+    color: rgb(164, 25, 25);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 400spx;
+}
