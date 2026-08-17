@@ -1,4 +1,4 @@
-import { ProductService } from "../services/productservice";
+import { ProductService } from "../../services/productservice";
 import  Styles  from "../../styles/index.module.css";
 import Link from "next/link";
 

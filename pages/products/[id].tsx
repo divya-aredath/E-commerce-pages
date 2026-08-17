@@ -1,4 +1,4 @@
-import { ProductService } from "../services/productservice";
+import { ProductService } from "../../services/productservice";
 import ProductDetails from "../components/ProductDetails";
 export async function getServerSideProps(context: any) {
   const { id } = context.params;
