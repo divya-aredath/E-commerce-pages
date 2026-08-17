@@ -13,11 +13,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    /* background-color: #272317; */
+    background-color: #272317; 
     height:400px;
     width: 400px;
     border-radius: 10px;
-    background-image: url("../assets/sign.jpg");
     background-size: cover;
     opacity:0.9;
 }
