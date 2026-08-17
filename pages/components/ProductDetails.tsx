@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import styles from "../../styles/Product.module.css";
 import { useRouter } from "next/router";
 import CartContext from "../context/CartContext";
@@ -12,7 +13,10 @@ export default function ProductDetails({ product }: any) {
     if (!context) {
         throw new Error("CartContext is not available");
     }
-
+    if (!product) {
+    return <div>Loading product...</div>;
+    }
+ 
     const { addToCart } = context;
 
    
