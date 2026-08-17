@@ -2,7 +2,7 @@
 import { useContext, useState, FormEventHandler } from "react";
 import { AuthContext } from "./context/LoginContext";
 import { useRouter } from "next/navigation";
-import styles from "./login.module.css";
+import styles from "../styles/login.module.css";
 import CartContext from "./context/CartContext";
 
 
