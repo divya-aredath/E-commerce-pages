@@ -29,7 +29,7 @@ export default function ProductDetails({ product }: any) {
     <div className={styles.container}>
       <div className="row">
         <div className="col-md-6 ">
-          <img src={product.image} alt={product.title} className={styles.image} />
+          <img src={product.thumbnail} alt={product.title} className={styles.image} />
         </div>
         <div className="col-md-6">
           <h2>{product.title}</h2>

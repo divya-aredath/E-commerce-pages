@@ -44,7 +44,7 @@ export default function ProductsPage({ products, error }: any) {
 
       {products.map((p: any) => (
         <div key={p.id} className={Styles.productCard}>
-          <img src={p.image} alt={p.title} width={100} height={100} />
+          <img src={p.thumbnail} alt={p.title} width={100} height={100} />
           <h2 className={Styles.productTitle}>{p.title}</h2>
          
           <p className={Styles.productPrice}>${p.price}</p>
