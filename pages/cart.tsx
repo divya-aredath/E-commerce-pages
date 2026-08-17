@@ -10,7 +10,7 @@ interface cartitem {
   id: string | number;
   title: string;
   price: number;
-  thumbnail: string | undefined;
+  image: string | undefined;
   quantity: number;
 }
 
@@ -41,7 +41,7 @@ export default function CartPage() {
                 <div key={item.id} className="card mb-3">
                     <div className="row mt-5 g-0 mb-4 d-flex align-items-center flex-row ">
                         <div className="col-md-4 d-flex justify-content-center">
-                            <img src={item.thumbnail} className={styles.productImage} alt={item.title} />
+                            <img src={item.image} className={styles.productImage} alt={item.title} />
                         </div>
                         <div className="col-md-8 d-flex flex-column align-items-center">
                             <div className="card-body d-flex flex-row gap-3 align-items-center">

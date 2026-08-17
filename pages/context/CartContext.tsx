@@ -8,6 +8,7 @@ interface products {
     description?: string;
     category?: string;
     image?: string;
+    thumbnail?: string;
 }
 interface cartitem extends products {
     quantity: number;
@@ -22,27 +23,72 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<cartitem[]>([]);
+    // const addToCart = (product: products) => {
+    //       if (cart.find((item) => item.id === product.id))
+    //       {
+    //               setCart((prev) => 
+    //                 {
+    //                     const exisytingItem = prev.find((i) => i.id === product.id);
+    //                     const productImage = product.image || product.thumbnail || "";
+    //                     if (exisytingItem) {
+    //                           return prev.map((i) =>
+    //                           i.id === product.id ? { ...i, quantity: i.quantity + 1, image: i.image || productImage } : i
+    //                     );
+    //                    } 
+    //                    else {
+    //                           return [...prev, { ...product, quantity: 1, image: productImage }];
+    //                    }
+    //              return prev; });
+    //       }
+    //       else 
+    //       {
+    //         setCart((prev) => [...prev, { ...product, quantity: 1 }]);
+    //       }
+    // };
     const addToCart = (product: products) => {
-          if (cart.find((item) => item.id === product.id))
-          {
-                  setCart((prev) => 
-                    {
-                        const exisytingItem = prev.find((i) => i.id === product.id);
-                        if (exisytingItem) {
-                              return prev.map((i) =>
-                              i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i
-                        );
-                     } 
-                 return prev; });
-          }
-          else 
-          {
-            setCart((prev) => [...prev, { ...product, quantity: 1 }]);
-          }
-    };
-    const removeFromCart = (productId: string) => {
+
+    const productImage = product.image || product.thumbnail || "";
+
+    if (cart.find((item) => item.id === product.id)) {
+
+        setCart((prev) => {
+            const existingItem = prev.find(
+                (i) => i.id === product.id
+            );
+
+            if (existingItem) {
+                return prev.map((i) =>
+                    i.id === product.id
+                        ? {
+                              ...i,
+                              quantity: i.quantity + 1,
+                              image: i.image || productImage,
+                          }
+                        : i
+                );
+            }
+
+            return prev;
+        });
+
+    } else {
+
+        setCart((prev) => [
+            ...prev,
+            {
+                ...product,
+
+                // THIS IS THE IMPORTANT LINE
+                image: productImage,
+
+                quantity: 1,
+            },
+        ]);
+    }
+};
+    function removeFromCart(productId: string) {
         setCart((prev) => prev.filter((i) => i.id !== productId));
-    };
+    }
     const incrementQuantity = (productId: string) => {
         setCart((prev) =>
             prev.map((i) =>

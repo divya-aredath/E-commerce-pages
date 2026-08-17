@@ -21,7 +21,14 @@ export default function ProductDetails({ product }: any) {
 
    
     const onaddToCart=(product:any)=>{
-      addToCart(product)  ;
+      const productToAdd = {
+        id: product.id,
+        title: product.title, 
+        price: product.price,
+        thumbnail: product.thumbnail,
+        quantity: 1,
+      };
+      addToCart(productToAdd);
       router.push('/cart');
     }
 
