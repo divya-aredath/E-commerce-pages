@@ -13,7 +13,7 @@ export async function getServerSideProps() {
 export default function ProductsPage({ products }: any) {
   return (
     <>
-    <h3 className="text-center mt-5 mb-4">Products</h3>
+    <h3 className="text-center mt-5 mb-4">Our Products</h3>
     <div className={Styles.container}>
 
       {products.map((p: any) => (
