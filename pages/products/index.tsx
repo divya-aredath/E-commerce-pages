@@ -2,15 +2,41 @@ import { ProductService } from "../../services/productservice";
 import  Styles  from "../../styles/index.module.css";
 import Link from "next/link";
 
-export async function getServerSideProps() {
-  const products = await ProductService.getProducts();
+// export async function getServerSideProps() {
+//   const products = await ProductService.getProducts();
 
-  return {
-    props: { products },
-  };
+//   return {
+//     props: { products },
+//   };
+// }
+export async function getServerSideProps() {
+  try {
+    const products = await ProductService.getProducts();
+
+    console.log("PRODUCTS RECEIVED:", products);
+
+    return {
+      props: {
+        products,
+      },
+    };
+  } catch (error) {
+    console.error("PRODUCT FETCH ERROR:", error);
+
+    return {
+      props: {
+        products: [],
+        error: "Unable to load products",
+      },
+    };
+  }
 }
 
-export default function ProductsPage({ products }: any) {
+export default function ProductsPage({ products, error }: any) {
+  if (error) {
+    return <div className="text-center text-danger">Error: {error}</div>;
+  }
+
   return (
     <>
     <h3 className="text-center mt-5 mb-4">Our Products</h3>
